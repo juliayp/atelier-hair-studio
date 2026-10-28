@@ -1,0 +1,10 @@
+.vercel/
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+*.zip
+*.tmp
+.DS_Store
+Thumbs.db
