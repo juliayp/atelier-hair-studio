@@ -3325,6 +3325,7 @@ textarea.w-input, textarea.w-select {
   .hero-portrait {
     width: 100%;
     height: 340px;
+    right: 0;
   }
 
   .site-logo {
@@ -3335,6 +3336,7 @@ textarea.w-input, textarea.w-select {
   .hero-oval {
     width: 100%;
     height: 340px;
+    right: 0;
   }
 
   .hero-eyebrow {
@@ -3347,6 +3349,7 @@ textarea.w-input, textarea.w-select {
     width: 100%;
     height: 235px;
     top: 585px;
+    right: 0;
   }
 
   .services-ribbon-text {
