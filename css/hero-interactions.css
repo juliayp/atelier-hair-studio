@@ -1,0 +1,185 @@
+/* Hero hover study — local preview, scoped to the existing Hero. */
+.hero-oval { clip-path: none; overflow: visible; pointer-events: none; transition: filter 380ms ease; }
+.hero-oval-image { width: 100%; height: 100%; object-fit: cover; object-position: right top; clip-path: polygon(97.128% 26.417%, 97.588% 28.024%, 97.917% 29.71%, 98.115% 31.472%, 98.182% 33.303%, 98.116% 35.199%, 97.918% 37.156%, 97.589% 39.166%, 97.13% 41.225%, 96.541% 43.328%, 95.825% 45.468%, 94.983% 47.64%, 94.018% 49.837%, 92.932% 52.054%, 91.729% 54.285%, 90.411% 56.522%, 88.982% 58.762%, 87.447% 60.996%, 85.809% 63.22%, 84.072% 65.426%, 82.243% 67.609%, 80.325% 69.764%, 78.324% 71.883%, 76.245% 73.962%, 74.094% 75.994%, 71.878% 77.973%, 69.601% 79.896%, 67.27% 81.756%, 64.893% 83.547%, 62.474% 85.267%, 60.021% 86.908%, 57.541% 88.468%, 55.04% 89.941%, 52.526% 91.324%, 50.004% 92.613%, 47.482% 93.805%, 44.968% 94.895%, 42.467% 95.882%, 39.986% 96.762%, 37.533% 97.533%, 35.115% 98.193%, 32.737% 98.74%, 30.406% 99.173%, 28.129% 99.49%, 25.913% 99.69%, 23.762% 99.774%, 21.683% 99.74%, 19.681% 99.59%, 17.763% 99.322%, 15.933% 98.939%, 14.197% 98.44%, 12.558% 97.828%, 11.022% 97.104%, 9.594% 96.27%, 8.275% 95.329%, 7.072% 94.282%, 5.985% 93.133%, 5.02% 91.886%, 4.178% 90.542%, 3.461% 89.107%, 2.872% 87.583%, 2.412% 85.976%, 2.083% 84.29%, 1.885% 82.528%, 1.818% 80.697%, 1.884% 78.801%, 2.082% 76.844%, 2.411% 74.834%, 2.87% 72.775%, 3.459% 70.672%, 4.175% 68.532%, 5.017% 66.36%, 5.982% 64.163%, 7.068% 61.946%, 8.271% 59.715%, 9.589% 57.478%, 11.018% 55.238%, 12.553% 53.004%, 14.191% 50.78%, 15.928% 48.574%, 17.757% 46.391%, 19.675% 44.236%, 21.676% 42.117%, 23.755% 40.038%, 25.906% 38.006%, 28.122% 36.027%, 30.399% 34.104%, 32.73% 32.244%, 35.107% 30.453%, 37.526% 28.733%, 39.979% 27.092%, 42.459% 25.532%, 44.96% 24.059%, 47.474% 22.676%, 49.996% 21.387%, 52.518% 20.195%, 55.032% 19.105%, 57.533% 18.118%, 60.014% 17.238%, 62.467% 16.467%, 64.885% 15.807%, 67.263% 15.26%, 69.594% 14.827%, 71.871% 14.51%, 74.087% 14.31%, 76.238% 14.226%, 78.317% 14.26%, 80.319% 14.41%, 82.237% 14.678%, 84.067% 15.061%, 85.803% 15.56%, 87.442% 16.172%, 88.978% 16.896%, 90.406% 17.73%, 91.725% 18.671%, 92.928% 19.718%, 94.015% 20.867%, 94.98% 22.114%, 95.822% 23.458%, 96.539% 24.893%); pointer-events: auto; }
+.hero-title-underline { background-image: linear-gradient(#e8bf96, #e8bf96); background-repeat: no-repeat; background-position: 50% 100%; background-size: 0% 1px; -webkit-box-decoration-break: clone; box-decoration-break: clone; transition: background-size 420ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .hero-oval:has(.hero-oval-image:hover) { filter: drop-shadow(0 0 22px rgba(127,194,230,.65)) drop-shadow(0 0 42px rgba(127,194,230,.25)); }
+    .hero-title:hover .hero-title-underline { background-size: 100% 1px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-oval, .hero-title-underline, }
+
+/* Shared CTA effects. Disabled demo controls remain inactive. */
+.button-hover-beige, .button-hover-white { transition: box-shadow 300ms ease; }
+.button-hover-beige { --button-glow: rgba(242,209,177,.1); }
+.button-hover-white { --button-glow: rgba(255,255,255,.05); }
+.button-hover-label { display: inline-block; transition: transform 300ms ease; }
+:is(.button-hover-beige, .button-hover-white):focus-visible { box-shadow: -8px -8px 20px var(--button-glow), 8px 8px 20px var(--button-glow); }
+:is(.button-hover-beige, .button-hover-white):focus-visible .button-hover-label { transform: scale(1.15); }
+@media (hover: hover) and (pointer: fine) {
+  :is(.button-hover-beige, .button-hover-white):hover { box-shadow: -8px -8px 20px var(--button-glow), 8px 8px 20px var(--button-glow); }
+  :is(.button-hover-beige, .button-hover-white):hover .button-hover-label { transform: scale(1.15); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button-hover-beige, .button-hover-white, .button-hover-label { transition: none; }
+}
+
+/* Dropdown underline mirrors the Hero title timing and center-out motion. */
+.menu-link-label {
+  background-image: linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 0% 1px;
+  padding-bottom: 5px;
+  transition: background-size 420ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .site-menu .menu-panel:hover .menu-link-label { background-size: 100% 1px; }
+}
+.site-menu .menu-panel:focus-visible .menu-link-label { background-size: 100% 1px; }
+@media (prefers-reduced-motion: reduce) {
+  .menu-link-label { transition: none; }
+}
+
+/* Services heading: accent underline from the center. */
+.services-heading-underline {
+  background-image: linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 0% 1px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-size 420ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .services-heading:hover .services-heading-underline { background-size: 100% 1px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .services-heading-underline { transition: none; }
+}
+
+/* Services photo zoom stays inside each original image frame. */
+.service-image-frame { width: 100%; height: 100%; overflow: hidden; }
+.service-image { transition: transform 420ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover .service-image { transform: scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-image { transition: none; }
+}
+
+/* About name: one-time staggered letter reveal near the viewport bottom. */
+.about-name-word { display: inline-block; white-space: nowrap; }
+.about-name-letter { display: inline-block; }
+.about-heading[data-reveal="pending"] .about-name-letter { opacity: 0; transform: translateY(.22em); }
+@media (prefers-reduced-motion: reduce) {
+  .about-heading[data-reveal="pending"] .about-name-letter { opacity: 1; transform: none; }
+}
+
+/* About experience number: match the CTA label scale. */
+.about-experience-number { transition: transform 300ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .about-experience-number:hover { transform: scale(1.15); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-experience-number { transition: none; }
+}
+
+/* Gallery: preserve mosaic sizing on the frame, zoom only its photograph. */
+.gallery-photo-frame { overflow: hidden; }
+.gallery-photo-frame > .gallery-photo-image { display: block; width: 100%; height: 100%; margin: 0; transition: transform 420ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .gallery-photo-frame:hover > .gallery-photo-image { transform: scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-photo-frame > .gallery-photo-image { transition: none; }
+}
+
+/* Video control: a subtle hover scale, without moving its anchor. */
+.salon-video .w-background-video--control { transition: transform 300ms ease; transform-origin: center; }
+@media (hover: hover) and (pointer: fine) {
+  .salon-video .w-background-video--control:hover { transform: scale(1.15); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .salon-video .w-background-video--control { transition: none; }
+}
+
+/* Style section: Hero-style underline and framed photo zoom. */
+.style-heading-underline {
+  background-image: linear-gradient(#e8bf96, #e8bf96);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 0% 1px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-size 650ms ease-in-out;
+}
+.style-photo-frame { overflow: hidden; }
+.style-photo-frame > .style-photo-image { display: block; width: 100%; height: 100%; transform: none; transition: transform 420ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .style-heading:hover .style-heading-underline { background-size: 100% 1px; }
+  .style-photo-frame:hover > .style-photo-image { transform: scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .style-heading-underline, .style-photo-frame > .style-photo-image { transition: none; }
+}
+
+/* Instagram heading: enlarge the text without changing section spacing. */
+.instagram-heading-label { display: inline-block; transform-origin: center; transition: transform 650ms ease-in-out; }
+@media (hover: hover) and (pointer: fine) {
+  .instagram-heading:hover .instagram-heading-label { transform: scale(1.15); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .instagram-heading-label { transition: none; }
+}
+
+/* Footer social and policy links: white center-out underline. */
+.footer-link-label {
+  background-image: linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 0% 1px;
+  padding-bottom: 3px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-size 420ms ease-in-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  :is(.footer-social-link, .footer-policy-link):hover .footer-link-label { background-size: 100% 1px; }
+}
+:is(.footer-social-link, .footer-policy-link):focus-visible .footer-link-label { background-size: 100% 1px; }
+@media (prefers-reduced-motion: reduce) {
+  .footer-link-label { transition: none; }
+}
+
+/* Footer navigation color feedback. */
+.footer-nav-link { transition: color 300ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .footer-nav-link:hover { color: #e8bf96; }
+  .footer-nav-link.footer-nav-home:hover { color: #fff; }
+}
+.footer-nav-link:focus-visible { color: #e8bf96; }
+.footer-nav-link.footer-nav-home:focus-visible { color: #fff; }
+@media (prefers-reduced-motion: reduce) {
+  .footer-nav-link { transition: none; }
+}
+
+/* Keep policy links aligned right after removing the demo telephone. */
+.footer-bottom .footer-privacy { margin-left: auto; }
+
+/* Decorative heading lines: a crisp edge with a soft downward glow.
+   Layered backgrounds keep the letters sharp and follow wrapped lines. */
+.hero-title-underline, .services-heading-underline, .style-heading-underline {
+  --heading-line: #e8bf96;
+  --heading-glow: rgba(232,191,150,.28);
+  padding-bottom: 5px;
+  background-image: linear-gradient(var(--heading-line), var(--heading-line)), linear-gradient(to bottom, var(--heading-glow), transparent);
+  background-position: 50% calc(100% - 6px), 50% 100%;
+  background-size: 0% 1px, 0% 6px;
+}
+.services-heading-underline { --heading-line: #e8bf96; --heading-glow: rgba(232,191,150,.28); }
+@media (hover: hover) and (pointer: fine) {
+  .hero-title:hover .hero-title-underline,
+  .services-heading:hover .services-heading-underline,
+  .style-heading:hover .style-heading-underline { background-size: 100% 1px, 100% 6px; }
+}
